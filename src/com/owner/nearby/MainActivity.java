@@ -37,15 +37,21 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+/**
+ * 
+ * @author owner
+ * @date 2014-09-05
+ * @qq 756699074
+ */
 public class MainActivity extends Activity implements Ilocation,OnGetPoiSearchResultListener,OnClickListener  {
 
 	Context context;
 	Button btnPre,btnNext;
 	ListView lvContent;
-	private CommonAdapter<PoiEntity> mAdapter;
-	List<PoiEntity> poiEntityList=new ArrayList<PoiEntity>();
-	LocationClient mLocationClient;
-	private PoiSearch mPoiSearch = null;
+	private CommonAdapter<PoiEntity> mAdapter;//ListView显示的适配器
+	List<PoiEntity> poiEntityList=new ArrayList<PoiEntity>();//保存搜索信息列表
+	LocationClient mLocationClient;//定位对象
+	private PoiSearch mPoiSearch = null;//查询对象声明
 	boolean ldup=true;//防止多查询 控制是否查询
 	BDLocation location;//保存定位地址
 	int pageNum=0;//页数
